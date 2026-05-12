@@ -1,6 +1,8 @@
 # OptimusClaude
 
-Native macOS desktop app for managing multiple Claude Code agents from a single interface.
+A native macOS desktop client for [Claude Code](https://docs.anthropic.com/en/docs/claude-code). Run multiple agents in parallel across separate project workspaces, group related projects so a single chat shares context across all of them, and keep one eye on every file the agent touches through a built-in diff viewer.
+
+OptimusClaude wraps the official Claude Code CLI — your authentication, your rate limits, your prompts — and adds the UI it never had: a chat tab strip per workspace, smart tool-call grouping, inline permission prompts, a changes timeline, and rate-limit visibility across every tier.
 
 ![OptimusClaude — multi-workspace chat with live plan and streaming](docs/screenshots/hero.png)
 
