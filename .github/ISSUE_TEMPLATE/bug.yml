@@ -1,0 +1,68 @@
+name: Bug report
+description: Report something that's broken or behaving incorrectly.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug. The more detail you give, the faster it gets fixed.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: A clear, concise description of the bug and what you expected instead.
+      placeholder: When I do X, Y happens. I expected Z.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered list of the exact steps that trigger the bug.
+      placeholder: |
+        1. Open OptimusClaude
+        2. Click ...
+        3. See error
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: OptimusClaude version
+      description: Find this in the app menu → About, or the filename of the DMG you installed.
+      placeholder: e.g. 0.1.5
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      description: Apple menu → About This Mac.
+      placeholder: e.g. 14.5 (Sonoma)
+    validations:
+      required: true
+  - type: input
+    id: cli
+    attributes:
+      label: Claude Code CLI version
+      description: Run `claude --version` in a terminal.
+      placeholder: e.g. 2.1.0
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs or screenshots
+      description: |
+        Drag and drop screenshots, or paste log output here. The app's debug log is reachable via the small "debug" badge at the top-right of the chat header.
+      render: shell
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues and didn't find a duplicate.
+          required: true
+        - label: I'm on Apple Silicon (Intel Macs are not supported).
+          required: true
