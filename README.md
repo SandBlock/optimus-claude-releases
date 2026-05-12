@@ -2,6 +2,8 @@
 
 Native macOS desktop app for managing multiple Claude Code agents from a single interface.
 
+![OptimusClaude — multi-workspace chat with live plan and streaming](docs/screenshots/hero.png)
+
 This repository hosts public releases and the auto-update feed. The application source is maintained privately.
 
 > **Not affiliated with Anthropic.** OptimusClaude is an independent third-party tool that drives the official Claude Code CLI on your machine. It is not built by, endorsed by, or sponsored by Anthropic. "Claude" and "Claude Code" are trademarks of Anthropic, used here only to describe interoperability.
@@ -23,16 +25,42 @@ Get the latest `.dmg` from the [Releases page](https://github.com/SandBlock/opti
 
 ## Features
 
-- **Multi-workspace management** — switch between project directories from the sidebar.
-- **Workspace groups** — share context across related projects via `--add-dir`.
+### Multi-workspace + groups
+
+Switch between project directories from the sidebar. Group related projects together so a single chat shares context across all of them via `--add-dir`.
+
+<img src="docs/screenshots/sidebar-groups.png" alt="Sidebar showing workspaces and an expanded group" width="320">
+
+### Smart tool grouping
+
+Consecutive tool calls — `Read`, `Grep`, `Bash`, `Edit` — collapse into a single expandable card so chat history stays scannable.
+
+![Collapsed tool-group card summarising a multi-step script audit](docs/screenshots/tool-group.png)
+
+### Permission prompts
+
+Tool approvals surface as inline Allow / Deny buttons. Auto-accept is one shortcut away.
+
+![Inline permission prompt with Allow and Deny buttons for a database migration](docs/screenshots/permission.png)
+
+### Changes timeline + diff viewer
+
+Every file the agent touches is recorded with a GitHub-style diff. Acknowledge, comment, or feed a comment back into the chat to course-correct.
+
+![Changes panel with a diff viewer and a timeline of edits](docs/screenshots/changes-diff.png)
+
+Comments on a change are routed back to the agent as part of your next prompt:
+
+![Change comment routed into the input as agent context](docs/screenshots/change-comment.png)
+
+### Everything else
+
 - **Live streaming** — real-time Claude Code responses with markdown, syntax highlighting, and tool-use cards.
 - **Session persistence** — sessions are named and resumable from the Sessions tab.
 - **Model selection** — pick Opus, Sonnet, or Haiku per workspace; auto-detects the CLI default.
 - **Reasoning effort picker** — exposes every `--effort` level your installed CLI supports.
 - **Usage tracking** — rate-limit utilization across all tiers.
-- **Smart tool grouping** — consecutive tool calls collapse into one expandable card.
 - **Slash commands & autocomplete** — `/clear`, `/compact`, `/commit`, `/review`, and `@file` references with recursive search.
-- **Permission prompts** — quick action buttons for tool approvals and multi-choice questions.
 
 ## Updates
 
